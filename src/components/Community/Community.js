@@ -11,9 +11,9 @@ const Community = () => {
     const filter = {
         'AVAILABILITY': ['Online Now', 'Near Me'],
 
-        'UP FOR': ['jams', 'collaborations', 'Service'],
+        'UP FOR': ['Jams', 'Collaborations', 'Service'],
 
-        'FILTER BY LANGUAGE': ['English', 'portuguese', 'Spanish',
+        'FILTER BY LANGUAGE': ['English', 'Portuguese', 'Spanish',
             'German', 'Dutch', 'Hebrew'],
 
         'FILTER BY GENERE': ['Dubstep', 'EDM', 'Hip-Hop', 'R&B', 'Hip-Hop', 'R&B',
@@ -32,10 +32,7 @@ const Community = () => {
 
 
             <div className="filterStyle"
-                style={{
-                    maxWidth: '14rem',
-                    paddingTop: '100px',
-                }}>
+                >
 
                 {Object.entries(filter).map(([key, value]) => {
                     return (

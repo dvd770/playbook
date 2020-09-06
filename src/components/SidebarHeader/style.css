@@ -1,0 +1,43 @@
+
+.header-buttons{
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.icon-Hamburger-Menu:before {
+  content: "\e922";
+  color: #fff;
+  background-color: #212326;
+  font-family: unset;
+  font-size: 20;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  /* border-right: #212326;
+  border-right-width: 3px; */
+  /* opacity: ; */
+}
+
+.icon-Logo:before {
+  content: "\e921";
+  color: #f1b13e;
+  font-family: unset;
+  padding-left: 10px;
+  font-size: 30px;
+  align-self: center;
+}
+
+.sidebar-Search-Field{
+  flex: 1 1;
+  background: rgba(98, 104, 100, 0.584);
+  margin-left: 10px;
+  border: 1px solid transparent;
+  outline: none;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 14px;
+  width: 200px;
+}

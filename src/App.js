@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Chat,
-  Channel,
-  ChannelListMessenger,
-  MessageInput,
+  // Channel,
+  // ChannelListMessenger,
+  // MessageInput,
   ChannelList,
-  MessageList,
-  Window,
-  Thread
+  // MessageList,
+  // Window,
+  // Thread
 } from 'stream-chat-react';
 import 'stream-chat-react/dist/css/index.css';
 import { StreamChat } from 'stream-chat';
@@ -18,6 +18,7 @@ import ChannelListTeam from './components/ChannelListTeam/ChannelListTeam';
 import Community from './components/Community/Community';
 
 import CustomChannelList from './components/CustomChannelList/CustomChannelList';
+import Sidebar from './components/Sidebar/Sidebar';
 
 
 
@@ -41,37 +42,20 @@ const channel = chatClient.channel('messaging', 'godevs', {
 });
 
 
+const App = (props) => {
 
-export default class App extends Component{
-    constructor(props){
-      super(props);
+  // const [selectedTab] = useState(props)
 
+  // useEffect(()=>{
+  //   selectedTab(props);
+  // }, [props, selectedTab])
 
-      this.state = {
-
-      }
-    }
-
-
-
-
-    componentDidMount(){
-
-      // fetch data here
-      // .then()
-
-    }
-
-
-
-
-
-render () {
   const filters = { type: 'messaging', members: { $in: ['wispy-wildflower-1'] } };
 
-
-
   console.log('chat clients', chatClient)
+
+  // console.log("App props", selectedTab)
+
   return (
     // this.state.isUserLoggedIn === 'user logged' ? {
       // chat window
@@ -88,17 +72,23 @@ render () {
 
       <ChannelList
           filters={filters}
-          List={ChannelListTeam}
+          List={Sidebar}
           // List={Community}
           // Preview={CustomChannelList}
 
       />
 
       <ChatMessageArea />
+
+      {/*
+        selectedTab === 'yourSession' ?
+      <ChatMessageArea /> : selectedTab === 'community' ? <div style={{color: 'red',   'font-size': 20 }}>Community</div>:  selectedTab === 'newSession' ? <div style={{color: 'red',   'font-size': 20 }}>New Session</div> : null
+      */}
     </Chat>
   )
 }
-}
+
+export default App;
 
 
 
